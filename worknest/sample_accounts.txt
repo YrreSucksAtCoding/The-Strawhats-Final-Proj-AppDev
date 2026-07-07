@@ -1,0 +1,17 @@
+WorkNest - Sample Accounts for Testing
+Group: The Strawhats
+
+ADMIN (Seller Part)
+Email:    admin@worknest.local
+Password: Admin@1234
+Access:   Admin panel (manage users, manage products/prices, reports + audit log)
+
+BUYER (Buyer Part)
+Email:    buyer@worknest.local
+Password: Buyer@1234
+Access:   Store, cart, checkout, payment
+
+Notes:
+- These accounts are created by running setup_accounts.php once after importing the database.
+- New buyer accounts can also be created through the Register page; those accounts
+  must confirm their email through the verification link before they can log in.

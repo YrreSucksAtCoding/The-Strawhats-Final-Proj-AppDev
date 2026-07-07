@@ -1,0 +1,228 @@
+/* WorkNest custom styles (used on top of Bootstrap 5) */
+
+:root {
+    --wn-ink: #26303a;
+    --wn-navy: #2f4156;
+    --wn-navy-dark: #24354a;
+    --wn-amber: #e0a439;
+    --wn-bg: #f4f6f8;
+    --wn-border: #dde3ea;
+}
+
+body {
+    background-color: var(--wn-bg);
+    color: var(--wn-ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* ---------- Navbar ---------- */
+
+.wn-navbar {
+    background-color: var(--wn-navy);
+}
+
+.wn-navbar .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.wn-navbar .navbar-brand img {
+    height: 34px;
+    margin-right: 8px;
+}
+
+.wn-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.wn-navbar .nav-link:hover,
+.wn-navbar .nav-link.active {
+    color: #fff;
+}
+
+.wn-group-badge {
+    background-color: var(--wn-amber);
+    color: var(--wn-navy-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 3px 10px;
+    vertical-align: middle;
+}
+
+/* ---------- Hero / page headers ---------- */
+
+.wn-hero {
+    background-color: var(--wn-navy);
+    color: #fff;
+    padding: 3rem 0 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--wn-amber);
+}
+
+.wn-hero p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 640px;
+}
+
+.wn-page-title {
+    border-left: 5px solid var(--wn-amber);
+    padding-left: 12px;
+    margin: 1.5rem 0 1rem;
+    font-weight: 700;
+}
+
+/* ---------- Product cards ---------- */
+
+.wn-card {
+    border: 1px solid var(--wn-border);
+    border-radius: 10px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    height: 100%;
+}
+
+.wn-card:hover {
+    box-shadow: 0 6px 18px rgba(38, 48, 58, 0.12);
+    transform: translateY(-2px);
+}
+
+.wn-card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.wn-price {
+    color: var(--wn-navy);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.wn-thumb {
+    background: linear-gradient(135deg, #e9edf2, #f7f9fb);
+    border-radius: 10px 10px 0 0;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9aa8b6;
+    font-size: 2.2rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-wn {
+    background-color: var(--wn-navy);
+    color: #fff;
+    border: none;
+}
+
+.btn-wn:hover {
+    background-color: var(--wn-navy-dark);
+    color: #fff;
+}
+
+.btn-wn-amber {
+    background-color: var(--wn-amber);
+    color: var(--wn-navy-dark);
+    font-weight: 600;
+    border: none;
+}
+
+.btn-wn-amber:hover {
+    background-color: #caa049;
+    color: var(--wn-navy-dark);
+}
+
+/* ---------- Forms / auth pages ---------- */
+
+.wn-form-card {
+    max-width: 520px;
+    margin: 2.5rem auto;
+    border: 1px solid var(--wn-border);
+    border-radius: 12px;
+    background: #fff;
+    padding: 2rem;
+}
+
+.wn-form-card h2 {
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- Admin sidebar layout ---------- */
+
+.wn-admin-side {
+    background-color: var(--wn-navy);
+    min-height: 100%;
+    border-radius: 10px;
+    padding: 1rem 0;
+}
+
+.wn-admin-side a {
+    display: block;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+}
+
+.wn-admin-side a:hover,
+.wn-admin-side a.active {
+    background-color: var(--wn-navy-dark);
+    color: #fff;
+    border-left: 4px solid var(--wn-amber);
+}
+
+/* ---------- Tables ---------- */
+
+.table thead th {
+    background-color: var(--wn-navy);
+    color: #fff;
+    font-weight: 600;
+}
+
+.wn-low-stock {
+    background-color: #fdecea !important;
+}
+
+/* ---------- Footer ---------- */
+
+.wn-footer {
+    background-color: var(--wn-navy-dark);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+.wn-footer .disclaimer {
+    color: var(--wn-amber);
+    font-weight: 600;
+}
+
+.wn-thumb-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.wn-member-photo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--wn-amber);
+}
+
+@media (max-width: 576px) {
+    .wn-hero {
+        padding: 2rem 0 1.5rem;
+    }
+}
