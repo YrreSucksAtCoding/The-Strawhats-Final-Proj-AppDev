@@ -1,12 +1,16 @@
 /* WorkNest custom styles (used on top of Bootstrap 5) */
+/* One Piece / Strawhat color scheme:
+   red = Luffy's vest, amber = straw hat, navy = the deep sea */
 
 :root {
     --wn-ink: #26303a;
-    --wn-navy: #2f4156;
-    --wn-navy-dark: #24354a;
-    --wn-amber: #e0a439;
-    --wn-bg: #f4f6f8;
-    --wn-border: #dde3ea;
+    --wn-navy: #684949;        /* deep sea blue */
+    --wn-navy-dark: #391010;   /* deeper sea */
+    --wn-red: #7e544f;         /* Luffy vest red */
+    --wn-red-dark: #9e0e19;
+    --wn-amber: #f2c14e;       /* straw hat yellow */
+    --wn-bg: #f7f4ec;          /* sandy off-white */
+    --wn-border: #e3ddcf;
 }
 
 body {
@@ -26,6 +30,7 @@ main {
 
 .wn-navbar {
     background-color: var(--wn-navy);
+    border-bottom: 3px solid var(--wn-red);
 }
 
 .wn-navbar .navbar-brand {
@@ -44,7 +49,7 @@ main {
 
 .wn-navbar .nav-link:hover,
 .wn-navbar .nav-link.active {
-    color: #fff;
+    color: var(--wn-amber);
 }
 
 .wn-group-badge {
@@ -55,6 +60,7 @@ main {
     border-radius: 20px;
     padding: 3px 10px;
     vertical-align: middle;
+    border: 2px solid var(--wn-red);
 }
 
 /* ---------- Hero / page headers ---------- */
@@ -73,7 +79,7 @@ main {
 }
 
 .wn-page-title {
-    border-left: 5px solid var(--wn-amber);
+    border-left: 5px solid var(--wn-red);
     padding-left: 12px;
     margin: 1.5rem 0 1rem;
     font-weight: 700;
@@ -89,8 +95,9 @@ main {
 }
 
 .wn-card:hover {
-    box-shadow: 0 6px 18px rgba(38, 48, 58, 0.12);
+    box-shadow: 0 6px 18px rgba(193, 18, 31, 0.15);
     transform: translateY(-2px);
+    border-color: var(--wn-amber);
 }
 
 .wn-card .card-title {
@@ -99,32 +106,32 @@ main {
 }
 
 .wn-price {
-    color: var(--wn-navy);
+    color: var(--wn-red);
     font-weight: 700;
     font-size: 1.1rem;
 }
 
 .wn-thumb {
-    background: linear-gradient(135deg, #e9edf2, #f7f9fb);
+    background: linear-gradient(135deg, #efe9db, #f9f6ee);
     border-radius: 10px 10px 0 0;
     height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #9aa8b6;
+    color: #b3a98f;
     font-size: 2.2rem;
 }
 
 /* ---------- Buttons ---------- */
 
 .btn-wn {
-    background-color: var(--wn-navy);
+    background-color: var(--wn-red);
     color: #fff;
     border: none;
 }
 
 .btn-wn:hover {
-    background-color: var(--wn-navy-dark);
+    background-color: var(--wn-red-dark);
     color: #fff;
 }
 
@@ -136,7 +143,7 @@ main {
 }
 
 .btn-wn-amber:hover {
-    background-color: #caa049;
+    background-color: #e0ae35;
     color: var(--wn-navy-dark);
 }
 
@@ -146,6 +153,7 @@ main {
     max-width: 520px;
     margin: 2.5rem auto;
     border: 1px solid var(--wn-border);
+    border-top: 4px solid var(--wn-red);
     border-radius: 12px;
     background: #fff;
     padding: 2rem;
@@ -160,7 +168,6 @@ main {
 
 .wn-admin-side {
     background-color: var(--wn-navy);
-    min-height: 100%;
     border-radius: 10px;
     padding: 1rem 0;
 }
@@ -175,8 +182,8 @@ main {
 .wn-admin-side a:hover,
 .wn-admin-side a.active {
     background-color: var(--wn-navy-dark);
-    color: #fff;
-    border-left: 4px solid var(--wn-amber);
+    color: var(--wn-amber);
+    border-left: 4px solid var(--wn-red);
 }
 
 /* ---------- Tables ---------- */
@@ -185,20 +192,38 @@ main {
     background-color: var(--wn-navy);
     color: #fff;
     font-weight: 600;
+    border-bottom: 3px solid var(--wn-red) !important;
 }
 
 .wn-low-stock {
     background-color: #fdecea !important;
 }
 
+/* ---------- Category filter pills ---------- */
+
+.nav-pills .nav-link {
+    color: var(--wn-navy);
+    font-weight: 600;
+}
+
+.nav-pills .nav-link:hover {
+    color: var(--wn-red);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--wn-red);
+    color: #fff;
+}
+
 /* ---------- Footer ---------- */
 
 .wn-footer {
     background-color: var(--wn-navy-dark);
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(225, 163, 163, 0.75);
     padding: 1.5rem 0;
     margin-top: 3rem;
     font-size: 0.9rem;
+    border-top: 4px solid var(--wn-red);
 }
 
 .wn-footer .disclaimer {
@@ -206,11 +231,15 @@ main {
     font-weight: 600;
 }
 
+/* ---------- Extras ---------- */
+
 .wn-thumb-img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
+    height: 160px;
+    object-fit: contain;
     border-radius: 10px 10px 0 0;
+    background: #fff;
+    padding: 8px;
 }
 
 .wn-member-photo {
@@ -218,7 +247,7 @@ main {
     height: 52px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--wn-amber);
+    border: 2px solid var(--wn-red);
 }
 
 @media (max-width: 576px) {

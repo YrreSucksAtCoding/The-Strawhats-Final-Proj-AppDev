@@ -60,7 +60,7 @@ require_once '../includes/header.php';
                 <div class="alert alert-success py-2"><?php echo $success; ?></div>
             <?php endif; ?>
 
-            <div class="card wn-card p-3 mb-4">
+            <div class="card wn-card p-3 mb-4 h-auto">
                 <h5>Add a product</h5>
                 <form method="post" action="products.php" novalidate>
                     <div class="row">
