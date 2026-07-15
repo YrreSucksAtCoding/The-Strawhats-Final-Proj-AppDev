@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require_once 'includes/phpmailer/PHPMailer.php';
+require_once 'includes/phpmailer/SMTP.php';
+require_once 'includes/phpmailer/Exception.php';
+
 require_once 'includes/config.php';
 require_once 'includes/functions.php';
 
@@ -72,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
 
-            // Send the confirmation email with the verify link
+            // Build the confirmation email with the verify link
             $verify_link = BASE_URL . '/verify.php?token=' . $token;
             $subject = 'WorkNest - Confirm your email address';
             $message = "Hi $full_name,\n\n"
@@ -81,14 +88,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 . $verify_link . "\n\n"
                 . "If you did not register, you can ignore this email.\n\n"
                 . "- The Strawhats";
-            $headers = 'From: no-reply@worknest.local' . "\r\n";
 
-            mail($email, $subject, $message, $headers);
+            // Send via Gmail SMTP using PHPMailer
+            $mailer = new PHPMailer(true);
+            try {
+                $mailer->isSMTP();
+                $mailer->Host = 'smtp.gmail.com';
+                $mailer->SMTPAuth = true;
+                $mailer->Username = SMTP_USER;
+                $mailer->Password = SMTP_PASS;
+                $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mailer->Port = 587;
+
+                $mailer->setFrom(SMTP_USER, 'WorkNest');
+                $mailer->addAddress($email, $full_name);
+                $mailer->Subject = $subject;
+                $mailer->Body = $message;
+
+                $mailer->send();
+            } catch (Exception $e) {
+                // Account is still created even if the email fails to send;
+                // the user can be verified manually by an admin if needed.
+            }
 
             log_action($conn, 'REGISTER', 'New account registered: ' . $email);
 
             $success = 'Registration successful! We sent a confirmation link to your email address. '
-                . 'Please verify your email before logging in.';
+                . 'Please verify your email before logging in. (If you do not see it, check your Spam folder.)';
             // Clear the form after success
             $full_name = $email = $address = $contact_no = '';
         } else {
