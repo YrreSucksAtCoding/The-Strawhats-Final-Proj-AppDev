@@ -1,17 +1,15 @@
 <?php
 // Database connection settings.
-// Change these when deploying to InfinityFree/AwardSpace
-// (they give you their own hostname, username, and db name).
+// Change these when deploying to InfinityFree - Yrre
 define('DB_HOST', 'sql313.infinityfree.com');
 define('DB_USER', 'if0_42417565');
 define('DB_PASS', 'C9bbDhf0UM9KY');
 define('DB_NAME', 'if0_42417565_worknest');
 
-// Base URL of the site, no trailing slash.
-// Example on hosting: https://worknest.infinityfreeapp.com
+// Example on hosting: https://worknest.infinityfreeapp.com - Yrre
 define('BASE_URL', 'https://worknest.infinityfreeapp.com');
 
-// Gmail SMTP settings for PHPMailer (email verification sending)
+// Gmail SMTP settings for PHPMailer
 define('SMTP_USER', 'yrresuguitan0918@gmail.com');
 define('SMTP_PASS', 'hhhylekabzvcsips');
 

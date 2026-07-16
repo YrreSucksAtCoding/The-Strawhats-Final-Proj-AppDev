@@ -1,15 +1,14 @@
-/* WorkNest custom styles (used on top of Bootstrap 5) */
-/* One Piece / Strawhat color scheme:
-   red = Luffy's vest, amber = straw hat, navy = the deep sea */
+/* WorkNest custom styles used on top of Bootstrap 5 */
+/* One Piece dapat yung colors hehehe - Ains */
 
 :root {
     --wn-ink: #26303a;
-    --wn-navy: #684949;        /* deep sea blue */
-    --wn-navy-dark: #391010;   /* deeper sea */
-    --wn-red: #7e544f;         /* Luffy vest red */
+    --wn-navy: #684949;        
+    --wn-navy-dark: #391010;   
+    --wn-red: #7e544f;         
     --wn-red-dark: #9e0e19;
-    --wn-amber: #f2c14e;       /* straw hat yellow */
-    --wn-bg: #f7f4ec;          /* sandy off-white */
+    --wn-amber: #f2c14e;       
+    --wn-bg: #f7f4ec;          
     --wn-border: #e3ddcf;
 }
 
@@ -231,8 +230,7 @@ main {
     font-weight: 600;
 }
 
-/* ---------- Extras ---------- */
-
+/* ---------- Extras ---------- - Ains */
 .wn-thumb-img {
     width: 100%;
     height: 160px;

@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Contact number is required.';
     }
 
-    // Do not let an admin demote their own account by accident
+    // Do not let an admin demote their own account by accident - feature added - Yrre
     if ($id === (int) $_SESSION['user_id'] && $role !== 'admin') {
         $errors[] = 'You cannot remove your own admin role.';
     }

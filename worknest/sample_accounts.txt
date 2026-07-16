@@ -1,6 +1,13 @@
 WorkNest - Sample Accounts for Testing
 Group: The Strawhats
 
+Notes:
+- These accounts are created by running setup_accounts.php once after importing the database. (local only, 
+  already created in the hosted website) - Yrre
+
+- New buyer accounts can also be created through the Register page; those accounts
+  must confirm their email through the verification link before they can log in.
+
 ADMIN (Seller Part)
 Email:    admin@worknest.local
 Password: Admin@1234
@@ -10,8 +17,3 @@ BUYER (Buyer Part)
 Email:    buyer@worknest.local
 Password: Buyer@1234
 Access:   Store, cart, checkout, payment
-
-Notes:
-- These accounts are created by running setup_accounts.php once after importing the database.
-- New buyer accounts can also be created through the Register page; those accounts
-  must confirm their email through the verification link before they can log in.

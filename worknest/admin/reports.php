@@ -7,7 +7,8 @@ require_admin();
 // Inventory report: remaining stock per product
 $inventory = mysqli_query($conn, 'SELECT p.name, c.name AS category_name, p.price, p.stock FROM products p JOIN categories c ON p.category_id = c.id ORDER BY p.stock ASC');
 
-// Audit log: latest activities first. Optionally filter to one user.
+// Audit log: latest activities first
+// Optionally filter to one user feature added - Yrre
 $filter_user = 0;
 if (isset($_GET['user']) && is_numeric($_GET['user'])) {
     $filter_user = (int) $_GET['user'];

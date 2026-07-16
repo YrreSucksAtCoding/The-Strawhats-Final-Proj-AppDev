@@ -1,3 +1,6 @@
+// Product Edit Page not working - Ains
+// Fixed - Yrre
+
 <?php
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
