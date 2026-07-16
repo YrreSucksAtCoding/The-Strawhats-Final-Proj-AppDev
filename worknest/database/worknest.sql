@@ -1,5 +1,5 @@
 -- WorkNest database
--- Import this file first, then run setup_accounts.php once to create the admin account.
+-- Import this file first, then run setup_accounts.php once to create the admin account - Yrre
 
 CREATE DATABASE IF NOT EXISTS worknest_db;
 USE worknest_db;
